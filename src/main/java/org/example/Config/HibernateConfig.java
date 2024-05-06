@@ -99,6 +99,8 @@ public class HibernateConfig {
     }
     public static EntityManagerFactory getEntityManagerFactory(boolean isTest){
         if(isTest) return getEntityManagerFactoryConfigForTesting();
+        boolean isDeployed = (System.getenv("DEPLOYED") != null);
+        if (isDeployed) return buildEntityFactoryConfigDeployed();
         return getEntityManagerFactoryConfig();
     }
 
@@ -122,13 +124,6 @@ public class HibernateConfig {
             throw new ExceptionInInitializerError(ex);
         }
     }
-/*
-    public static EntityManagerFactory getEntityManagerFactoryDeployed(boolean isTest) {
-        if (isTest) return getEntityManagerFactoryConfigTest();
-        boolean isDeployed = (System.getenv("DEPLOYED") != null);
-        if (isDeployed) return getEntityManagerFactoryConfigIsDeployed();
-        return getEntityManagerFactoryConfigDevelopment();
-    }
-    */
+
 
 }
