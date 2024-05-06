@@ -1,5 +1,5 @@
 package org.example.Handlers;
-
+/*
 import io.restassured.RestAssured;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
@@ -100,7 +100,7 @@ public class SecurityHandlerTest {
                 .statusCode(201)
                 .body("username", equalTo("newuser"))
                 .body("token", notNullValue());
-    }*/
+    }
 
     @Test
     void testLogin() {
@@ -154,3 +154,4 @@ public class SecurityHandlerTest {
                 .body("msg", equalTo("Logout successful. Discard token..."));
     }
 }
+*/

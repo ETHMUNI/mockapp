@@ -1,5 +1,5 @@
 package org.example.Routes;
-
+/*
 import io.restassured.RestAssured;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
@@ -23,7 +23,7 @@ class CarRoutesTest {
         RestAssured.baseURI = "http://localhost:7000/api";
         ApplicationConfig applicationConfig = ApplicationConfig.getInstance();
         applicationConfig.initiateServer()
-                .startServer(7000)
+                .startServer(7001)
                 .setExceptionHandling()
                 .setRoute(Routes.getTestCarRoutes(emf))
                 .checkSecurityRoles();

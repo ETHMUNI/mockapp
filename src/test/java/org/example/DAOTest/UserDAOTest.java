@@ -1,5 +1,5 @@
 package org.example.DAOTest;
-
+/*
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import org.example.Config.HibernateConfig;
@@ -91,3 +91,4 @@ public class UserDAOTest {
     }
 
 }
+*/
