@@ -41,7 +41,7 @@
         <configuration>
           <transformers>
             <transformer>
-              <mainClass />
+              <mainClass>org/example/Main</mainClass>
             </transformer>
           </transformers>
           <filters>
