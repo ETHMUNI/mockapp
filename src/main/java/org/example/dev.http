@@ -49,7 +49,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJUaG9tYXMgSGFydG1hbm4iLCJzd
 
 
 ###
-POST http://localhost:7000/api/auth/register
+POST http://165.227.131.232:7000/api/auth/register
 Content-Type: application/json
 
 {
@@ -60,12 +60,12 @@ Content-Type: application/json
 
 ### Login User
 
-POST http://localhost:7000/api/auth/login
+POST http://165.227.131.232:7000/api/auth/login
 Content-Type: application/json
 
 {
-"username": "test1",
-"password": "test123"
+  "username": "usertest",
+  "password": "user123"
 }
 
 ### Login ADMIN

@@ -14,11 +14,12 @@ public class Main {
         ApplicationConfig applicationConfig = ApplicationConfig.getInstance();
         applicationConfig
                 .initiateServer()
+                .checkSecurityRoles()
                 .startServer(7000)
                 .setExceptionHandling()
                 .setRoute(Routes.getSecurityRoutes(emf))
-                .setRoute(Routes.getCarRoutes(emf))
-                .checkSecurityRoles();
+                .setRoute(Routes.getCarRoutes(emf));
+
 
         // Populate the database
        // Populator populator = new Populator(emf);
