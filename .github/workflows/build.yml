@@ -20,9 +20,12 @@ jobs:
       - name: Print GitHub Runner Environment Variables
         run: env
       - name: Debug Environment Variables
-        run: echo "DOCKERHUB_USERNAME=${{ secrets.DOCKERHUB_USERNAME }} DOCKERHUB_TOKEN length=${{ secrets.DOCKERHUB_TOKEN != '' && secrets.DOCKERHUB_TOKEN.length || 'undefined' }}"
+        run: |
+          echo "DOCKERHUB_USERNAME=${{ secrets.DOCKERHUB_USERNAME }}"
+          echo "DOCKERHUB_TOKEN length=${{ secrets.DOCKERHUB_TOKEN != '' && secrets.DOCKERHUB_TOKEN.length || 'undefined' }}"
+          echo "${{ secrets.DOCKERHUB_TOKEN }}" | docker login -u "${{ secrets.DOCKERHUB_USERNAME }}" --password-stdin || true
       - name: Login to Docker Hub
-        run: echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u ${{ secrets.DOCKERHUB_USERNAME }} --password-stdin
+        run: echo "${{ secrets.DOCKERHUB_TOKEN }}" | docker login -u "${{ secrets.DOCKERHUB_USERNAME }}" --password-stdin
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v2
       - name: Build and push
